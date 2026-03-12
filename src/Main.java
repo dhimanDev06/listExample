@@ -110,5 +110,32 @@ public class Main {
         System.out.println(newStr);
         System.out.println(stmStr);
 
+        String revStr= "";
+        for (int i = strArray.length; i > 0; i --){
+            String pStr = "";
+            if(i != 1){
+                pStr = strArray[i -1]+ " ";
+            }else {
+                pStr = strArray[i -1];
+            }
+            revStr = revStr  + pStr;
+        }
+        System.out.println(revStr);
+
+        List lst = Arrays.asList(str.split(" "));
+        Collections.reverse(lst);
+        String revStr1 = String.join(" ", lst);
+
+        System.out.println(revStr1);
+
+        FunctionalInterfacePractice fi = new FunctionalInterfacePractice();
+        fi.simplePredicate();
+        fi.filterPredicate();
+        fi.simpleFunction();
+        fi.functionChainingEx1();fi.functionChainingEx2();
+
+
+        CollectionsPractice cp = new CollectionsPractice();
+        cp.arryListEx();cp.linkedListEx();cp.setEx();cp.queueEx();cp.mapEx();
     }
 }
