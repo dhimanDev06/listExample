@@ -1,17 +1,27 @@
+import java.math.BigDecimal;
+
 public class Person {
     // Private fields (encapsulation)
     private String name;
     private int age;
     private String city;
+    private BigDecimal salary;
 
-    // Default constructor
-    public Person() {}
 
     // Parameterized constructor
-    public Person(String name, int age, String city) {
+    public Person(String name, int age, String city, BigDecimal salary) {
         this.name = name;
         this.age = age;
         this.city = city;
+        this.salary = salary;
+    }
+
+    public BigDecimal getSalary() {
+        return salary;
+    }
+
+    public void setSalary(BigDecimal salary) {
+        this.salary = salary;
     }
 
     // GETTERS
@@ -48,6 +58,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{name='" + name + "', age=" + age + ", city='" + city + "'}";
+        return "{name='" + name + "', age=" + age + ", city='" + city + "',salary = " + salary+"' }";
     }
 }

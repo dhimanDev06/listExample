@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -75,9 +76,9 @@ public class Main {
         System.out.println("Max is "+newANum+newANum.stream().max(Integer::compareTo).get());
 
         ArrayList<Person> plist = new ArrayList<Person>();
-        plist.add(new Person("Dhiman",36,"Kolkata"));
-        plist.add(new Person("Sonam",33,"Pune"));
-        plist.add(new Person("Samita",35,"Malda"));
+        plist.add(new Person("Sonam",33,"Pune",new BigDecimal(30220.00)));
+        plist.add(new Person("Dhiman",36,"Kolkata",new BigDecimal(100000.00)));
+        plist.add(new Person("Samita",35,"Malda",new BigDecimal(21100.00)));
         ArrayList<Person> npList = plist.stream().filter(a-> a.getCity().equals("Pune")).collect(Collectors.toCollection(ArrayList::new));
 
         System.out.println(npList);
@@ -137,5 +138,30 @@ public class Main {
 
         CollectionsPractice cp = new CollectionsPractice();
         cp.arryListEx();cp.linkedListEx();cp.setEx();cp.queueEx();cp.mapEx();
+
+        fi.filteWithPadicate(plist);
+        fi.nornalShow();
+        fi.showAsDefault();
+        fi.compaare(plist);
+//        fi.sho();
+
+
+        Book b1 = new Book("Let's C", new BigDecimal(2200.55));
+        Book b2 = new Book("Java", new BigDecimal(2200.55));
+        System.out.println(b1.price().equals(b2.price()));
+        System.out.println(b1.name().equals(b2.name()));
+
+        System.out.println(b1.hashCode());
+
+
+
+        List<Integer> numL = List.of(1,12,5,65,6,6,1,7);
+        List<Integer> ulist = numL.stream().distinct().sorted().toList();
+        Integer total = numL.stream().distinct().reduce((a,b) -> a + b).get();
+
+        System.out.println(ulist +" -> "+ total);
+
+        fi.consumerEx(plist);
+        fi.supplierEx(plist);
     }
 }
